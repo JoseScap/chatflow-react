@@ -1,0 +1,42 @@
+{
+  "name": "@chatflow/react",
+  "version": "1.0.0",
+  "description": "Una librería de React para Chatflow",
+  "main": "dist/chatflow-react.umd.js",
+  "module": "dist/chatflow-react.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "import": "./dist/chatflow-react.es.js",
+    "require": "./dist/chatflow-react.umd.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JoseScap/chatflow-react"
+  },
+  "author": "Juan José Puente Scapolatempo",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "dependencies": {
+    "lucide-react": "^0.474.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "~5.6.2",
+    "vite": "^6.0.5"
+  }
+}
