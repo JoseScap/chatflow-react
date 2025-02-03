@@ -9,26 +9,30 @@ jobs:
   validate-tag:
     runs-on: ubuntu-latest
     outputs:
-      tag_mismatch: ${{ steps.validate_tag.outcome == 'failure' }}
+      should_publish: ${{ steps.validate_tag.outputs.should_publish }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Read package.json version
         id: package_version
-        run: echo "version=$(jq -r .version package.json)" >> $GITHUB_ENV
+        run: echo "VERSION=$(jq -r .version package.json)" >> $GITHUB_ENV
 
       - name: Validate tag
         id: validate_tag
         run: |
-          if [ "${{ github.event.release.tag_name }}" != "v$version"  ]; then
-            echo "Tag mismatch: expected ${{ github.event.release.tag_name }}, got v$version"
+          if [ "${{ github.event.release.tag_name }}" == "v$VERSION" ]; then
+            echo "should_publish=true" >> $GITHUB_ENV
+            echo "should_publish=true" >> $GITHUB_OUTPUT
+          else
+            echo "should_publish=false" >> $GITHUB_ENV
+            echo "should_publish=false" >> $GITHUB_OUTPUT
           fi
 
   delete-release:
     runs-on: ubuntu-latest
     needs: validate-tag
-    if: needs.validate-tag.outputs.tag_mismatch == 'true'
+    if: needs.validate-tag.outputs.should_publish == 'false'
     steps:
       - name: Delete release
         run: |
@@ -45,7 +49,7 @@ jobs:
   publish-npm:
     runs-on: ubuntu-latest
     needs: validate-tag
-    if: needs.validate-tag.outputs.tag_mismatch == 'false'
+    if: needs.validate-tag.outputs.should_publish == 'true'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
