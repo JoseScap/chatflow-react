@@ -22,9 +22,11 @@ jobs:
         id: validate_tag
         run: |
           if [ "${{ github.event.release.tag_name }}" == "v$VERSION" ]; then
+            echo "Go to publish"
             echo "should_publish=true" >> $GITHUB_ENV
             echo "should_publish=true" >> $GITHUB_OUTPUT
           else
+            echo "Go to delete"
             echo "should_publish=false" >> $GITHUB_ENV
             echo "should_publish=false" >> $GITHUB_OUTPUT
           fi
