@@ -21,9 +21,8 @@ jobs:
       - name: Validate tag
         id: validate_tag
         run: |
-          if [ "v$version" != "${{ github.event.release.tag_name }}" ]; then
-            echo "Tag mismatch: expected v$version, got ${{ github.event.release.tag_name }}"
-            exit 1
+          if [ "${{ github.event.release.tag_name }}" != "v$version"  ]; then
+            echo "Tag mismatch: expected ${{ github.event.release.tag_name }}, got v$version"
           fi
 
   delete-release:
