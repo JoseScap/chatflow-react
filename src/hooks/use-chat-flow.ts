@@ -1,8 +1,8 @@
-import { useState, useEffect, Dispatch, SetStateAction } from "react";
+import { useState, Dispatch, SetStateAction } from "react";
 import { v4 } from "uuid";
 
-import { Message } from "../types";
-import { chatFlows, notFoundFlow, welcomeFlow } from "../mocks";
+import { ChatFlow, Message } from "../types";
+import { MAIN_FLOW, NOT_FOUND_FLOW, WELCOME_FLOW } from "../mocks";
 
 interface IUseChatFlow {
   messages: Message[];
@@ -13,16 +13,13 @@ interface IUseChatFlow {
 }
 
 const useChatFlow = (): IUseChatFlow => {
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<Message[]>([...WELCOME_FLOW.messages]);
   const [input, setInput] = useState<string>("");
-
-  useEffect(() => {
-    setMessages(welcomeFlow.messages);
-  }, []);
+  const [chatFlows] = useState<ChatFlow[]>(MAIN_FLOW)
 
   const handleNextFlowResponse = (idFlow: string | null) => {
     const nextFlow =
-      chatFlows.find((flow) => flow.id === idFlow) ?? notFoundFlow;
+      chatFlows.find((flow) => flow.id === idFlow) ?? NOT_FOUND_FLOW;
 
     setMessages((prev) => [...prev, ...nextFlow.messages]);
   };

@@ -7,7 +7,7 @@ const studentId = v4();
 const interestedId = v4();
 const notFoundId = v4();
 
-export const welcomeFlow: ChatFlow = {
+export const WELCOME_FLOW: ChatFlow = {
   id: welcomeId,
   name: "Welcome",
   messages: [
@@ -42,7 +42,7 @@ export const welcomeFlow: ChatFlow = {
   ],
 };
 
-const studentFlow: ChatFlow = {
+const STUDENT_FLOW: ChatFlow = {
   id: studentId,
   name: "Student",
   messages: [
@@ -70,7 +70,7 @@ const studentFlow: ChatFlow = {
   ],
 };
 
-const interestedFlow: ChatFlow = {
+const INTERESTED_FLOW: ChatFlow = {
   id: interestedId,
   name: "Interested",
   messages: [
@@ -98,7 +98,7 @@ const interestedFlow: ChatFlow = {
   ],
 };
 
-export const notFoundFlow: ChatFlow = {
+export const NOT_FOUND_FLOW: ChatFlow = {
   id: notFoundId,
   name: "NotFound",
   messages: [
@@ -112,4 +112,4 @@ export const notFoundFlow: ChatFlow = {
   ],
 };
 
-export const chatFlows: ChatFlow[] = [welcomeFlow, studentFlow, interestedFlow];
+export const MAIN_FLOW: ChatFlow[] = [WELCOME_FLOW, STUDENT_FLOW, INTERESTED_FLOW];

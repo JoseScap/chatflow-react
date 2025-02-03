@@ -1,7 +1,7 @@
 {
   "name": "@chatflows/react",
-  "version": "0.0.4",
-  "description": "Una librería de React para chatflows",
+  "version": "0.0.5",
+  "description": "Library for Chatbots",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
