@@ -1,8 +1,10 @@
+name: Opened PR Workflow
+
 on:
-    pull_request:
-      types:
-        - opened
-        - synchronize
+  pull_request:
+    types:
+      - opened
+      - synchronize
   
 jobs:
   build:
