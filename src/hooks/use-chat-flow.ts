@@ -1,3 +1,5 @@
+'use client'
+ 
 import { useState, Dispatch, SetStateAction } from "react";
 import { v4 } from "uuid";
 

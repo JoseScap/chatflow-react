@@ -1,3 +1,5 @@
+'use client'
+ 
 import { CSSProperties, PropsWithChildren, SetStateAction } from "react";
 import { X } from "lucide-react";
 
