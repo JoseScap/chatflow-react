@@ -15,7 +15,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
-    "lint": "eslint src --ext .tsx,.ts"
+    "lint": "eslint lib --ext .tsx,.ts"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
