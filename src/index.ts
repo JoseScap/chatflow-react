@@ -1,1 +1,3 @@
-export { default as Chatflow } from "./components/Chatflow"
+export * from "./components"
+export * from "./hooks"
+export * from "./types"
