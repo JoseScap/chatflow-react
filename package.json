@@ -1,17 +1,12 @@
 {
   "name": "@chatflows/react",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Una librería de React para chatflows",
-  "main": "dist/chatflows-react.umd.js",
-  "module": "dist/chatflows-react.es.js",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "exports": {
-    "import": "./dist/chatflows-react.es.js",
-    "require": "./dist/chatflows-react.umd.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JoseScap/chatflows-react.git"
@@ -19,25 +14,39 @@
   "author": "Juan José Puente Scapolatempo",
   "license": "MIT",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "prepublishOnly": "npm run build"
+    "build": "webpack",
+    "lint": "eslint src --ext .tsx,.ts"
   },
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "^17.0.0 || ^18.0.0",
+  "react-dom": "^17.0.0 || ^18.0.0"
   },
   "dependencies": {
-    "lucide-react": "^0.474.0"
+    "lucide-react": "^0.474.0",
+    "uuid": "^11.0.5"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.4",
-    "typescript": "~5.6.2",
-    "vite": "^6.0.5"
+    "@babel/core": "^7.26.7",
+    "@babel/preset-env": "^7.26.7",
+    "@babel/preset-react": "^7.26.3",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@types/uuid": "^10.0.0",
+    "babel-loader": "^9.2.1",
+    "clean-webpack-plugin": "^4.0.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.19.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "html-webpack-plugin": "^5.6.3",
+    "prettier": "^3.4.2",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.7.3",
+    "webpack": "^5.97.1",
+    "webpack-bundle-analyzer": "^4.10.2",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
   },
   "keywords": [
     "React",
