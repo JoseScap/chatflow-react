@@ -6,8 +6,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: './src/index.ts',
-      name: 'ChatflowReact',
-      fileName: (format) => `chatflow-react.${format}.js`
+      name: 'ChatflowsReact',
+      fileName: (format) => `chatflows-react.${format}.js`
     },
     rollupOptions: {
       external: ['react', 'react-dom'],

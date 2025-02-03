@@ -1,20 +1,20 @@
 {
-  "name": "@chatflow/react",
-  "version": "1.0.0",
-  "description": "Una librería de React para Chatflow",
-  "main": "dist/chatflow-react.umd.js",
-  "module": "dist/chatflow-react.es.js",
+  "name": "@chatflows/react",
+  "version": "0.0.1",
+  "description": "Una librería de React para chatflows",
+  "main": "dist/chatflows-react.umd.js",
+  "module": "dist/chatflows-react.es.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "exports": {
-    "import": "./dist/chatflow-react.es.js",
-    "require": "./dist/chatflow-react.umd.js"
+    "import": "./dist/chatflows-react.es.js",
+    "require": "./dist/chatflows-react.umd.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JoseScap/chatflow-react"
+    "url": "git+https://github.com/JoseScap/chatflows-react.git"
   },
   "author": "Juan José Puente Scapolatempo",
   "license": "MIT",
@@ -38,5 +38,14 @@
     "@vitejs/plugin-react": "^4.3.4",
     "typescript": "~5.6.2",
     "vite": "^6.0.5"
-  }
+  },
+  "keywords": [
+    "React",
+    "Chatbot",
+    "chatflows"
+  ],
+  "bugs": {
+    "url": "https://github.com/JoseScap/chatflows-react/issues"
+  },
+  "homepage": "https://github.com/JoseScap/chatflows-react#readme"
 }
