@@ -1,6 +1,6 @@
 {
   "name": "@chatflows/react",
-  "version": "0.0.7_clientcomponents",
+  "version": "0.0.8",
   "description": "Library for Chatbots",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
