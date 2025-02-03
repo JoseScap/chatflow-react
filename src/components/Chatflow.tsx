@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from "react";
 import ChatflowBox from "./ChatflowBox";
 import ChatflowButton from "./ChatflowButton";
