@@ -39,7 +39,7 @@ jobs:
 
       - name: Delete release
         run: |
-          gh release delete "${{ github.event.release.name }}" --yes
+          gh release delete "${{ github.event.release.tag_name }}" --yes
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
